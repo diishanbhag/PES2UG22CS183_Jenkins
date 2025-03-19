@@ -13,11 +13,10 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing Stage"
-                sh 'cd /var/jenkins_home/workspace/${JOB_NAME}/main/ && ./hello_exec'
+                sh 'cd /var/jenkins_home/workspace/${JOB_NAME}/main/ && ./nonexistent_file'
                 sh 'echo "Test Stage Successful"'
-            }
-        }
-        
+    }
+}
         stage('Deploy') {
             steps {
                 echo "Deployment Stage"
